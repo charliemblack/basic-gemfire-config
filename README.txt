@@ -1,3 +1,13 @@
+This is a little sample to get users up and running with a typical GemFire cluster quickly.
+
+It does have some built in assumptions:
+* Running one GemFire data server per host. 
+* Running one Locator per host.
+* Running on one or more servers not just local host.
+
+If you need to perform something different than those assumption feel free to fork the
+project and do what you wish.
+
 .
 ├── config
 │   ├── site_a.properties    - The Properties for the GemFire Cluster - Edit this file
