@@ -26,3 +26,4 @@ project and do what you wish.
 │   └── stop_gemfire.sh      - Stop GemFire
 └── stats                    - The directory where the logs and stats will be gathered
     
+If you would like to watch the video walk through see: https://youtu.be/5DB3D3GjmWM    
