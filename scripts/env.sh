@@ -1,11 +1,14 @@
 
-hosts="192.168.5.200"
-hosts="$hosts 192.168.5.201"
+site_a=ec2-35-160-196-154.us-west-2.compute.amazonaws.com
+site_b=ec2-35-161-90-244.us-west-2.compute.amazonaws.com
 
-locators="192.168.5.200"
-locators="$locators 192.168.5.201"
+declare -a data_hosts=( $site_a $site_b )
 
-remote_dir=/home/demo/gemfire
+declare -a locator_hosts=( $site_a $site_b )
 
-SSH_USER=demo
+all_hosts=( $(echo "${data_hosts[@]} ${locator_hosts[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' ') )
 
+remote_dir=/home/centos/gemfire
+
+SSH_USER=centos
+user=${SSH_USER}

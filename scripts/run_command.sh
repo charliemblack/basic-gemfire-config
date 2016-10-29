@@ -7,11 +7,11 @@ cd "$SAVED" >&-
 
 source ${POC_HOME}/scripts/env.sh
 
-for currHost in $hosts $remotehosts
+for currHost in "${all_hosts[@]}"
 do
     echo ===== ${currHost} - Running "$@" ====
     ssh -o LogLevel=Error -t ${SSH_USER}@${currHost} '/usr/bin/env bash --login'  << ENDSSH
         $@
 ENDSSH
-  
+
 done

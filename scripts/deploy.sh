@@ -7,9 +7,8 @@ cd "$SAVED" >&-
 
 source ${POC_HOME}/scripts/env.sh
 
-for currHost in ${hosts} ${remotehosts}
+for currHost in "${all_hosts[@]}"
 do
     echo ==== Synching $currHost
     rsync -avz  --exclude 'data' --exclude 'stats' --delete ${POC_HOME}/ ${SSH_USER}@${currHost}:${remote_dir}
 done
-
